@@ -1,0 +1,180 @@
+:root {
+  /* Colors */
+  --color-green-500: hsl(158, 36%, 37%);
+  --color-green-700: hsl(158, 42%, 18%);
+  --color-black: hsl(212, 21%, 14%);
+  --color-grey: hsl(228, 12%, 48%);
+  --color-cream: hsl(30, 38%, 92%);
+  --color-white: hsl(0, 0%, 100%);
+
+  /* Typography */
+  --font-family-montserrat: "Montserrat", sans-serif;
+  --font-family-fraunces: "Fraunces", serif;
+  --font-weight-regular: 500;
+  --font-weight-bold: 700;
+  --font-size-xs: 0.5rem;
+  --font-size-sm: 0.75rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.5rem;
+  --font-size-xl: 2rem;
+  --font-size-2xl: 2.5rem;
+
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 40px;
+
+  /* Border radius */
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 24px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-family-montserrat);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-md);
+  color: var(--color-grey);
+  padding: var(--spacing-xl) var(--spacing-md);
+  background-color: var(--color-cream);
+}
+
+/* Image */
+img,
+picture,
+svg {
+  display: block;
+  height: 100%;
+}
+
+.card-image img {
+  width: 100%;
+}
+
+/* Typography */
+h1 {
+  font-family: var(--font-family-fraunces);
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-weight: var(--font-weight-bold);
+  line-height: 2rem;
+}
+
+h2 {
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-size: var(--font-size-sm);
+}
+
+p {
+  word-break: break-word;
+  font-size: 0.92rem;
+  line-height: 1.5rem;
+}
+
+/* Layout components */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-white);
+  overflow: hidden;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding: 0 var(--spacing-md) var(--spacing-lg);
+}
+
+/* Section components */
+/* Price section */
+.card-price {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-xs) 0;
+}
+
+.card-price-current {
+  font-family: var(--font-family-fraunces);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-green-500);
+}
+
+.card-price-original {
+  margin-left: var(--spacing-md);
+  font-size: var(--font-size-sm);
+  text-decoration: line-through;
+}
+
+/* Button section */
+.card-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--color-white);
+  background-color: var(--color-green-500);
+  padding: var(--spacing-md);
+  outline: none;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  transition: 300ms;
+}
+
+/* Focus and active states */
+.card-button:hover,
+.card-button:active,
+.card-button:focus {
+  background-color: var(--color-green-700);
+  cursor: pointer;
+}
+
+/* Media queries */
+@media only screen and (min-width: 650px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    max-width: 38rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+  }
+
+  .card-image {
+    width: 50%;
+  }
+
+  .card-content {
+    width: 50%;
+    padding: 0 var(--spacing-xl);
+    gap: var(--spacing-lg);
+  }
+
+  h2 {
+    letter-spacing: 5px;
+  }
+}
